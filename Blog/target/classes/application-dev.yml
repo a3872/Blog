@@ -1,0 +1,9 @@
+# 开发环境配置
+logging:
+  level:
+    root: info
+    com.zj: debug
+  file:
+    path: log/blog-dev.log
+server:
+  port: 8080

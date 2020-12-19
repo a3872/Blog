@@ -1,0 +1,969 @@
+2020-12-05 21:54:12.955 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 25876 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 21:54:13.020 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 21:54:13.020 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 21:54:13.291 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 21:54:13.291 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 21:54:16.705 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 21:54:16.720 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 21:54:16.720 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 21:54:16.892 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 21:54:16.892 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3601 ms
+2020-12-05 21:54:18.471 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 21:54:18.596 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 21:54:19.205 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 21:54:19.314 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 21:54:19.361 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 7.613 seconds (JVM running for 13.572)
+2020-12-05 21:54:29.344 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 21:54:29.345 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 21:54:29.360 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2020-12-05 21:54:29.399 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 21:54:29.405 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 21:54:29.405 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:54:31.904 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@69e0b591, {}]}
+2020-12-05 21:54:32.124 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 21:54:33.871 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 21:54:33.904 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 21:54:33.929 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 21:54:33.932 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/index
+2020-12-05 21:54:33.932 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:54:37.128 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs;jsessionid=2E8DE3714CFB52234530AA41A565FB63', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 1]}
+2020-12-05 21:54:37.272 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 21:54:37.272 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 21:54:37.295 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 21:54:37.302 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 21:54:37.303 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 21:54:37.306 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 2
+2020-12-05 21:54:37.319 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 21:54:37.319 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 21:54:37.321 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 21:54:37.325 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 21:54:37.325 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:54:42.527 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/66/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.editInput', args=[66, {}]}
+2020-12-05 21:54:42.528 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==>  Preparing: select b.id, b.title, b.content, b.first_picture, b.description, b.flag, b.appreciation, b.share_statement, b.commentable, b.recommend, b.published, b.type_id, b.tag_ids from t_blog b where b.id = ?;
+2020-12-05 21:54:42.529 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==> Parameters: 66(Long)
+2020-12-05 21:54:42.633 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - <==      Total: 1
+2020-12-05 21:54:42.634 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 21:54:42.634 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 21:54:42.637 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 21:54:42.642 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: select * from t_tags
+2020-12-05 21:54:42.642 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 
+2020-12-05 21:54:42.643 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 21:54:42.645 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs-inputs
+2020-12-05 21:54:42.645 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:26.856 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/66/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.editInput', args=[66, {}]}
+2020-12-05 21:56:29.042 [http-nio-8080-exec-5] ERROR com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?serverTimezone=UTC, jdbcUrl : jdbc:mysql://localhost:3306/blog?serverTimezone=UTC, lastPacketReceivedIdleMillis : 106243
+2020-12-05 21:56:29.119 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==>  Preparing: select b.id, b.title, b.content, b.first_picture, b.description, b.flag, b.appreciation, b.share_statement, b.commentable, b.recommend, b.published, b.type_id, b.tag_ids from t_blog b where b.id = ?;
+2020-12-05 21:56:29.119 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==> Parameters: 66(Long)
+2020-12-05 21:56:29.122 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - <==      Total: 1
+2020-12-05 21:56:29.124 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 21:56:29.124 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 21:56:29.126 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 21:56:29.127 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: select * from t_tags
+2020-12-05 21:56:29.128 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 
+2020-12-05 21:56:29.129 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 21:56:29.130 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs-inputs
+2020-12-05 21:56:29.131 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:32.704 [http-nio-8080-exec-5] WARN  org.springframework.validation.DataBinder - Skipping URI variable 'id' because request contains bind value with same name.
+2020-12-05 21:56:32.713 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/saveBlogs/66', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.editPost', args=[Blog{id=66, title='FinalTest', content='FinalTest', firstPicture='FinalTest', description='FinalTest', flag='转载', views=null, appreciation=true, shareStatement=true, commentable=true, published=true, recommend=true, createTime=null, updateTime=null, tagIds='58,60', typeId=null, userId=null, type=BlogTypes{id=59, typeName='null'}, tags=[], user=null, comments=[]}, {}, org.apache.catalina.session.StandardSessionFacade@69e0b591]}
+2020-12-05 21:56:32.725 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==>  Preparing: select id,type_name from t_type where id = ?
+2020-12-05 21:56:32.726 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==> Parameters: 59(Long)
+2020-12-05 21:56:32.727 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - <==      Total: 1
+2020-12-05 21:56:32.762 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==>  Preparing: select * from t_tags where ? in ( ? , ? )
+2020-12-05 21:56:32.765 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==> Parameters: [58, 60](ArrayList), 58(Long), 60(Long)
+2020-12-05 21:56:32.768 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - <==      Total: 0
+2020-12-05 21:56:32.769 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.updateBlog - ==>  Preparing: update t_blog set title = ?, content = ?, first_picture = ?, description = ?, flag = ?, views = ?, appreciation = ?, share_statement = ?, commentable = ? ,recommend = ?, published = ?, update_time = ?, type_id = ?, tag_ids = ? where id = ?;
+2020-12-05 21:56:32.770 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.updateBlog - ==> Parameters: FinalTest(String), FinalTest(String), FinalTest(String), FinalTest(String), 转载(String), null, true(Boolean), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-12-05 21:56:32.768(Timestamp), 59(Long), 58,60(String), 66(Long)
+2020-12-05 21:56:32.862 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.updateBlog - <==    Updates: 1
+2020-12-05 21:56:32.862 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Result:redirect:/admin/blogs
+2020-12-05 21:56:32.862 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:32.992 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{message=修改成功}, 1]}
+2020-12-05 21:56:32.995 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 21:56:32.996 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 21:56:32.997 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 21:56:32.998 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 21:56:32.998 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 21:56:33.000 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 2
+2020-12-05 21:56:33.001 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 21:56:33.002 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 21:56:33.003 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 21:56:33.005 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 21:56:33.005 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:38.384 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/type', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TypeController.type', args=[{}, 1]}
+2020-12-05 21:56:38.392 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==>  Preparing: SELECT count(0) FROM t_type
+2020-12-05 21:56:38.393 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==> Parameters: 
+2020-12-05 21:56:38.519 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - <==      Total: 1
+2020-12-05 21:56:38.520 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: SELECT * FROM t_type order by id desc LIMIT ?
+2020-12-05 21:56:38.521 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 5(Integer)
+2020-12-05 21:56:38.522 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 5
+2020-12-05 21:56:38.524 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTypes
+2020-12-05 21:56:38.524 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:43.309 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/type', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TypeController.type', args=[{}, 2]}
+2020-12-05 21:56:43.312 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==>  Preparing: SELECT count(0) FROM t_type
+2020-12-05 21:56:43.314 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==> Parameters: 
+2020-12-05 21:56:43.316 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - <==      Total: 1
+2020-12-05 21:56:43.318 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: SELECT * FROM t_type order by id desc LIMIT ?, ?
+2020-12-05 21:56:43.319 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 5(Integer), 5(Integer)
+2020-12-05 21:56:43.320 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 1
+2020-12-05 21:56:43.322 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTypes
+2020-12-05 21:56:43.322 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:45.108 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TagController.type', args=[{}, 1]}
+2020-12-05 21:56:45.113 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==>  Preparing: SELECT count(0) FROM t_tags
+2020-12-05 21:56:45.113 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==> Parameters: 
+2020-12-05 21:56:45.118 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - <==      Total: 1
+2020-12-05 21:56:45.120 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: SELECT * FROM t_tags order by id desc LIMIT ?
+2020-12-05 21:56:45.120 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 5(Integer)
+2020-12-05 21:56:45.121 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 21:56:45.122 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTags
+2020-12-05 21:56:45.122 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:47.324 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/friends', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.MyFriendsController.myFriends', args=[{}, 1]}
+2020-12-05 21:56:47.335 [http-nio-8080-exec-5] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - ==>  Preparing: SELECT count(0) FROM t_friend
+2020-12-05 21:56:47.336 [http-nio-8080-exec-5] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - ==> Parameters: 
+2020-12-05 21:56:47.455 [http-nio-8080-exec-5] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - <==      Total: 1
+2020-12-05 21:56:47.456 [http-nio-8080-exec-5] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - ==>  Preparing: SELECT * FROM t_friend order by id desc LIMIT ?
+2020-12-05 21:56:47.456 [http-nio-8080-exec-5] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - ==> Parameters: 5(Integer)
+2020-12-05 21:56:47.459 [http-nio-8080-exec-5] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - <==      Total: 1
+2020-12-05 21:56:47.460 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myFriends
+2020-12-05 21:56:47.460 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:56.024 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/loginOut', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.logOut', args=[org.apache.catalina.session.StandardSessionFacade@69e0b591]}
+2020-12-05 21:56:56.024 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Result:redirect:/admin
+2020-12-05 21:56:56.024 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:56.031 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 21:56:56.031 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 21:56:56.031 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 21:56:57.449 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@69e0b591, {}]}
+2020-12-05 21:56:57.451 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 21:56:57.451 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 21:56:57.596 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 21:56:57.596 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/index
+2020-12-05 21:56:57.596 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:10:21.416 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:10:21.416 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2020-12-05 22:10:21.419 [Thread-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2020-12-05 22:10:21.542 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 25876 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:10:21.542 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:10:21.543 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:10:21.963 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:10:21.964 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:10:21.964 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:10:21.976 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:10:21.976 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 432 ms
+2020-12-05 22:10:22.310 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:10:22.357 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:10:22.623 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:10:22.654 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:10:22.654 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 1.159 seconds (JVM running for 977.111)
+2020-12-05 22:10:22.654 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-12-05 22:27:33.929 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 18460 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:27:33.945 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:27:33.945 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:27:34.009 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 22:27:34.009 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 22:27:35.310 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:27:35.317 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:27:35.318 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:27:35.367 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:27:35.367 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1358 ms
+2020-12-05 22:27:35.924 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:27:36.011 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:27:36.307 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:27:36.339 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:27:36.354 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 2.987 seconds (JVM running for 3.747)
+2020-12-05 22:27:46.534 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 22:27:46.535 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 22:27:46.549 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2020-12-05 22:27:46.568 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 22:27:46.575 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 22:27:46.575 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:27:49.527 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@2a88d58a, {}]}
+2020-12-05 22:27:49.573 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 22:27:49.888 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:27:49.907 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:27:49.927 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:27:49.930 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin_index
+2020-12-05 22:27:49.931 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:27:50.031 [http-nio-8080-exec-4] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-4] Exception processing template "admin_index": Error resolving template [admin_index], template might not exist or might not be accessible by any of the configured Template Resolvers
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [admin_index], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2020-12-05 22:27:50.033 [http-nio-8080-exec-4] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [admin_index], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [admin_index], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2020-12-05 22:28:42.449 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 22700 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:28:42.455 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:28:42.455 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:28:42.613 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 22:28:42.629 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 22:28:43.797 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:28:43.797 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:28:43.797 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:28:43.860 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:28:43.860 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1231 ms
+2020-12-05 22:28:44.429 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:28:44.507 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:28:44.804 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:28:44.835 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:28:44.851 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 2.841 seconds (JVM running for 3.432)
+2020-12-05 22:28:57.312 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 22:28:57.315 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 22:28:57.335 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 20 ms
+2020-12-05 22:28:57.354 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 22:28:57.358 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 22:28:57.358 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:28:59.341 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@720157d2, {}]}
+2020-12-05 22:28:59.394 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 22:28:59.704 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:28:59.723 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:28:59.740 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:28:59.742 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/admin_index
+2020-12-05 22:28:59.743 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:29:14.852 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 22:29:14.852 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 22:29:14.852 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:29:29.560 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@2e09b66c, {}]}
+2020-12-05 22:29:29.561 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:29:29.562 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:29:29.564 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:29:29.565 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/admin_index
+2020-12-05 22:29:29.565 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:36:13.945 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 22628 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:36:13.949 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:36:13.949 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:36:14.001 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 22:36:14.001 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 22:36:15.281 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:36:15.281 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:36:15.281 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:36:15.343 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:36:15.343 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1342 ms
+2020-12-05 22:36:15.952 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:36:16.032 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:36:16.364 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:36:16.411 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:36:16.411 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 2.922 seconds (JVM running for 3.742)
+2020-12-05 22:36:29.798 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 22:36:29.801 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 22:36:29.812 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2020-12-05 22:36:29.831 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 22:36:29.837 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 22:36:29.837 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:36:31.732 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@3930647a, {}]}
+2020-12-05 22:36:31.783 [http-nio-8080-exec-4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 22:36:32.095 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:36:32.113 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:36:32.130 [http-nio-8080-exec-4] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:36:32.133 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/admin_index
+2020-12-05 22:36:32.133 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:40:39.727 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 19984 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:40:39.746 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:40:39.746 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:40:39.839 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 22:40:39.839 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 22:40:41.037 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:40:41.037 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:40:41.037 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:40:41.100 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:40:41.100 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1261 ms
+2020-12-05 22:40:41.724 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:40:41.816 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:40:42.153 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:40:42.200 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:40:42.215 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 3.078 seconds (JVM running for 3.653)
+2020-12-05 22:40:47.896 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 22:40:47.897 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 22:40:47.913 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-12-05 22:40:48.004 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@43d3c1a3, {}]}
+2020-12-05 22:40:48.056 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 22:40:48.347 [http-nio-8080-exec-1] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:40:48.371 [http-nio-8080-exec-1] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:40:48.390 [http-nio-8080-exec-1] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:40:48.393 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/admin_index
+2020-12-05 22:40:48.394 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:40:54.594 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 1]}
+2020-12-05 22:40:54.624 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:40:54.624 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:40:54.757 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:40:54.760 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 22:40:54.760 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 22:40:54.763 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 2
+2020-12-05 22:40:54.772 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:40:54.773 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:40:54.775 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:40:54.777 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:40:54.777 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:41:00.745 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=59, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=59, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:41:00.768 [http-nio-8080-exec-5] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.type_id = ? and b.title like ?
+2020-12-05 22:41:00.769 [http-nio-8080-exec-5] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: 59(Long), %%(String)
+2020-12-05 22:41:00.773 [http-nio-8080-exec-5] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 2
+2020-12-05 22:41:00.773 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:41:00.773 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:41:15.326 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.input', args=[{}]}
+2020-12-05 22:41:15.328 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:41:15.329 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:41:15.334 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:41:15.339 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: select * from t_tags
+2020-12-05 22:41:15.339 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 
+2020-12-05 22:41:15.341 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 22:41:15.344 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs-inputs
+2020-12-05 22:41:15.344 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:41:48.272 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/saveBlogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.saveBlogs', args=[Blog{id=null, title='test', content='<meta name="referrer" content="never">', firstPicture='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg', description='<meta name="referrer" content="never">', flag='原创', views=null, appreciation=true, shareStatement=true, commentable=true, published=true, recommend=true, createTime=null, updateTime=null, tagIds='58', typeId=null, userId=null, type=BlogTypes{id=60, typeName='null'}, tags=[], user=null, comments=[]}, {}, org.apache.catalina.session.StandardSessionFacade@43d3c1a3]}
+2020-12-05 22:41:48.378 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes_COUNT - ==>  Preparing: SELECT count(0) FROM t_type WHERE id = ?
+2020-12-05 22:41:48.380 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes_COUNT - ==> Parameters: 60(Long)
+2020-12-05 22:41:48.381 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes_COUNT - <==      Total: 1
+2020-12-05 22:41:48.382 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==>  Preparing: select id,type_name from t_type where id = ? LIMIT ?
+2020-12-05 22:41:48.382 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==> Parameters: 60(Long), 10(Integer)
+2020-12-05 22:41:48.383 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - <==      Total: 1
+2020-12-05 22:41:48.386 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==>  Preparing: select * from t_tags where ? in ( ? )
+2020-12-05 22:41:48.388 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==> Parameters: [58](ArrayList), 58(Long)
+2020-12-05 22:41:48.390 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - <==      Total: 0
+2020-12-05 22:41:48.391 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.insertBlog - ==>  Preparing: insert into t_blog (id, title, content, first_picture, description, flag, views, appreciation, share_statement, commentable, recommend, published, create_time, update_time, type_id, tag_ids, user_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+2020-12-05 22:41:48.393 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.insertBlog - ==> Parameters: null, test(String), <meta name="referrer" content="never">(String), https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg(String), <meta name="referrer" content="never">(String), 原创(String), 0(Integer), true(Boolean), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-12-05 22:41:48.391(Timestamp), 2020-12-05 22:41:48.391(Timestamp), 60(Long), 58(String), 1(Long)
+2020-12-05 22:41:48.529 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.insertBlog - <==    Updates: 1
+2020-12-05 22:41:48.530 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Result:redirect:/admin/blogs
+2020-12-05 22:41:48.530 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:41:48.551 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{message=新增成功}, 1]}
+2020-12-05 22:41:48.552 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:41:48.553 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:41:48.554 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:41:48.556 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 22:41:48.556 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 22:41:48.560 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 3
+2020-12-05 22:41:48.562 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:41:48.563 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:41:48.565 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:41:48.567 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:41:48.567 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:41:55.098 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/67/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.editInput', args=[67, {}]}
+2020-12-05 22:41:55.099 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==>  Preparing: select b.id, b.title, b.content, b.first_picture, b.description, b.flag, b.appreciation, b.share_statement, b.commentable, b.recommend, b.published, b.type_id, b.tag_ids from t_blog b where b.id = ?;
+2020-12-05 22:41:55.099 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==> Parameters: 67(Long)
+2020-12-05 22:41:55.103 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - <==      Total: 1
+2020-12-05 22:41:55.105 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:41:55.107 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:41:55.110 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:41:55.113 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: select * from t_tags
+2020-12-05 22:41:55.114 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 
+2020-12-05 22:41:55.115 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 22:41:55.117 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs-inputs
+2020-12-05 22:41:55.117 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:42:04.777 [http-nio-8080-exec-2] WARN  org.springframework.validation.DataBinder - Skipping URI variable 'id' because request contains bind value with same name.
+2020-12-05 22:42:04.781 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/saveBlogs/67', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.editPost', args=[Blog{id=67, title='test', content='<meta name="referrer" content="never">', firstPicture='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg', description='<meta name="referrer" content="never">', flag='转载', views=null, appreciation=true, shareStatement=true, commentable=true, published=true, recommend=true, createTime=null, updateTime=null, tagIds='', typeId=null, userId=null, type=BlogTypes{id=60, typeName='null'}, tags=[], user=null, comments=[]}, {}, org.apache.catalina.session.StandardSessionFacade@43d3c1a3]}
+2020-12-05 22:42:04.783 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==>  Preparing: select id,type_name from t_type where id = ?
+2020-12-05 22:42:04.783 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==> Parameters: 60(Long)
+2020-12-05 22:42:04.785 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - <==      Total: 1
+2020-12-05 22:42:04.787 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==>  Preparing: select * from t_tags where ? in ( )
+2020-12-05 22:42:04.787 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==> Parameters: [](ArrayList)
+2020-12-05 22:42:04.991 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:42:04.993 [http-nio-8080-exec-2] ERROR com.zj.blog.handler.ExpectionController - Request URL : http://localhost:8080/admin/saveBlogs/67,Expection : {}
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+### The error may exist in file [E:\ProjectData\idea\Blog\target\classes\mapper\TagDaoMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select * from t_tags where ? in (                   )
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy71.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy77.selectAllTagsByIds(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy78.selectAllTagsByIds(Unknown Source)
+	at com.zj.blog.service.impl.TagServiceImpl.listTagsByIds(TagServiceImpl.java:46)
+	at com.zj.blog.service.impl.TagServiceImpl$$FastClassBySpringCGLIB$$faf7cc35.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687)
+	at com.zj.blog.service.impl.TagServiceImpl$$EnhancerBySpringCGLIB$$9390c795.listTagsByIds(<generated>)
+	at com.zj.blog.controller.admin.BlogController.editPost(BlogController.java:102)
+	at com.zj.blog.controller.admin.BlogController$$FastClassBySpringCGLIB$$7bb73f95.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.zj.blog.controller.admin.BlogController$$EnhancerBySpringCGLIB$$fa044eed.editPost(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at jdk.internal.reflect.GeneratedMethodAccessor69.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy105.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:108)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy103.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 93 common frames omitted
+2020-12-05 22:42:04.996 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+### The error may exist in file [E:\ProjectData\idea\Blog\target\classes\mapper\TagDaoMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select * from t_tags where ? in (                   )
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3]
+2020-12-05 22:43:46.044 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 22140 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:43:46.044 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:43:46.044 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:43:46.110 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 22:43:46.110 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 22:43:47.186 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:43:47.186 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:43:47.186 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:43:47.248 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:43:47.264 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1154 ms
+2020-12-05 22:43:47.810 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:43:47.889 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:43:48.176 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:43:48.207 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:43:48.223 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 2.749 seconds (JVM running for 3.303)
+2020-12-05 22:43:58.366 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 22:43:58.370 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 22:43:58.387 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-12-05 22:43:58.464 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 22:43:58.475 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 22:43:58.475 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:44:00.585 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@4f4dd83e, {}]}
+2020-12-05 22:44:00.626 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 22:44:00.933 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:44:00.950 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:44:00.966 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:44:00.969 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/admin_index
+2020-12-05 22:44:00.969 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:44:02.857 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 1]}
+2020-12-05 22:44:02.883 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:44:02.884 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:44:02.886 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:44:02.888 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 22:44:02.889 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 22:44:02.891 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 3
+2020-12-05 22:44:02.902 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:44:02.903 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:44:02.905 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:44:02.907 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:44:02.907 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:44:07.082 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/67/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.editInput', args=[67, {}]}
+2020-12-05 22:44:07.083 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==>  Preparing: select b.id, b.title, b.content, b.first_picture, b.description, b.flag, b.appreciation, b.share_statement, b.commentable, b.recommend, b.published, b.type_id, b.tag_ids from t_blog b where b.id = ?;
+2020-12-05 22:44:07.084 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - ==> Parameters: 67(Long)
+2020-12-05 22:44:07.087 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectBlogById - <==      Total: 1
+2020-12-05 22:44:07.088 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:44:07.088 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:44:07.091 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:44:07.098 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: select * from t_tags
+2020-12-05 22:44:07.099 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 
+2020-12-05 22:44:07.101 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 22:44:07.102 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs-inputs
+2020-12-05 22:44:07.103 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:44:55.206 [http-nio-8080-exec-9] WARN  org.springframework.validation.DataBinder - Skipping URI variable 'id' because request contains bind value with same name.
+2020-12-05 22:44:55.220 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/saveBlogs/67', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.editPost', args=[Blog{id=67, title='test', content='<meta name="referrer" content="never">', firstPicture='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg', description='tagIds', flag='原创', views=null, appreciation=true, shareStatement=true, commentable=true, published=true, recommend=true, createTime=null, updateTime=null, tagIds='58,60', typeId=null, userId=null, type=BlogTypes{id=60, typeName='null'}, tags=[], user=null, comments=[]}, {}, org.apache.catalina.session.StandardSessionFacade@4f4dd83e]}
+2020-12-05 22:44:55.236 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==>  Preparing: select id,type_name from t_type where id = ?
+2020-12-05 22:44:55.236 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==> Parameters: 60(Long)
+2020-12-05 22:44:55.238 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - <==      Total: 1
+2020-12-05 22:44:55.254 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==>  Preparing: select * from t_tags where ? in ( ? , ? )
+2020-12-05 22:44:55.257 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==> Parameters: [58, 60](ArrayList), 58(Long), 60(Long)
+2020-12-05 22:44:55.262 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - <==      Total: 0
+2020-12-05 22:44:55.264 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.updateBlog - ==>  Preparing: update t_blog set title = ?, content = ?, first_picture = ?, description = ?, flag = ?, views = ?, appreciation = ?, share_statement = ?, commentable = ? ,recommend = ?, published = ?, update_time = ?, type_id = ?, tag_ids = ? where id = ?;
+2020-12-05 22:44:55.266 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.updateBlog - ==> Parameters: test(String), <meta name="referrer" content="never">(String), https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg(String), tagIds(String), 原创(String), null, true(Boolean), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-12-05 22:44:55.263(Timestamp), 60(Long), 58,60(String), 67(Long)
+2020-12-05 22:44:57.608 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.updateBlog - <==    Updates: 1
+2020-12-05 22:44:57.636 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:redirect:/admin/blogs
+2020-12-05 22:44:57.668 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:44:57.686 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{message=修改成功}, 1]}
+2020-12-05 22:44:57.688 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:44:57.688 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:44:57.690 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:44:57.692 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 22:44:57.692 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 22:44:57.694 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 3
+2020-12-05 22:44:57.696 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:44:57.696 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:44:57.697 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:44:57.698 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:44:57.699 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:06.416 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=60, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=60, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:45:06.420 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.type_id = ? and b.title like ?
+2020-12-05 22:45:06.420 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: 60(Long), %%(String)
+2020-12-05 22:45:06.422 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 1
+2020-12-05 22:45:06.423 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:45:06.423 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:11.552 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=null, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=null, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:45:11.553 [http-nio-8080-exec-6] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.title like ?
+2020-12-05 22:45:11.554 [http-nio-8080-exec-6] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: %%(String)
+2020-12-05 22:45:11.556 [http-nio-8080-exec-6] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 3
+2020-12-05 22:45:11.557 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:45:11.557 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:18.465 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.input', args=[{}]}
+2020-12-05 22:45:18.466 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:45:18.467 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:45:18.471 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:45:18.476 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: select * from t_tags
+2020-12-05 22:45:18.476 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 
+2020-12-05 22:45:18.478 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 22:45:18.480 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs-inputs
+2020-12-05 22:45:18.480 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:37.847 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/saveBlogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.saveBlogs', args=[Blog{id=null, title='test', content='tagIds', firstPicture='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg', description='tagIds', flag='', views=null, appreciation=true, shareStatement=true, commentable=false, published=true, recommend=true, createTime=null, updateTime=null, tagIds='58,60', typeId=null, userId=null, type=BlogTypes{id=59, typeName='null'}, tags=[], user=null, comments=[]}, {}, org.apache.catalina.session.StandardSessionFacade@4f4dd83e]}
+2020-12-05 22:45:37.853 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes_COUNT - ==>  Preparing: SELECT count(0) FROM t_type WHERE id = ?
+2020-12-05 22:45:37.853 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes_COUNT - ==> Parameters: 59(Long)
+2020-12-05 22:45:37.854 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes_COUNT - <==      Total: 1
+2020-12-05 22:45:37.855 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==>  Preparing: select id,type_name from t_type where id = ? LIMIT ?
+2020-12-05 22:45:37.855 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==> Parameters: 59(Long), 10(Integer)
+2020-12-05 22:45:37.856 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - <==      Total: 1
+2020-12-05 22:45:37.858 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==>  Preparing: select * from t_tags where ? in ( ? , ? )
+2020-12-05 22:45:37.858 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - ==> Parameters: [58, 60](ArrayList), 58(Long), 60(Long)
+2020-12-05 22:45:37.859 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTagsByIds - <==      Total: 0
+2020-12-05 22:45:37.860 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.insertBlog - ==>  Preparing: insert into t_blog (id, title, content, first_picture, description, flag, views, appreciation, share_statement, commentable, recommend, published, create_time, update_time, type_id, tag_ids, user_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+2020-12-05 22:45:37.861 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.insertBlog - ==> Parameters: null, test(String), tagIds(String), https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg(String), tagIds(String), (String), 0(Integer), true(Boolean), true(Boolean), false(Boolean), true(Boolean), true(Boolean), 2020-12-05 22:45:37.859(Timestamp), 2020-12-05 22:45:37.859(Timestamp), 59(Long), 58,60(String), 1(Long)
+2020-12-05 22:45:38.156 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.BlogDaoMapper.insertBlog - <==    Updates: 1
+2020-12-05 22:45:38.157 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:redirect:/admin/blogs
+2020-12-05 22:45:38.157 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:38.162 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{message=新增成功}, 1]}
+2020-12-05 22:45:38.163 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:45:38.163 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:45:38.165 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:45:38.169 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 22:45:38.170 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 22:45:38.172 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 3
+2020-12-05 22:45:38.173 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:45:38.173 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:45:38.174 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:45:38.175 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:45:38.176 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:43.747 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 2]}
+2020-12-05 22:45:43.751 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:45:43.752 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:45:43.753 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:45:43.755 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?, ?
+2020-12-05 22:45:43.755 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer), 3(Integer)
+2020-12-05 22:45:43.756 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 1
+2020-12-05 22:45:43.758 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:45:43.758 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:45:43.759 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:45:43.759 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:45:43.759 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:45.694 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 1]}
+2020-12-05 22:45:45.696 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:45:45.697 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:45:45.698 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:45:45.701 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 22:45:45.703 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 22:45:45.706 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 3
+2020-12-05 22:45:45.707 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:45:45.707 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:45:45.708 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:45:45.709 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:45:45.710 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:48.780 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 2]}
+2020-12-05 22:45:48.783 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:45:48.783 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:45:48.785 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:45:48.788 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?, ?
+2020-12-05 22:45:48.788 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer), 3(Integer)
+2020-12-05 22:45:48.791 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 1
+2020-12-05 22:45:48.792 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:45:48.793 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:45:48.794 [http-nio-8080-exec-10] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:45:48.795 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:45:48.795 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:51.582 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=59, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=59, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:45:51.584 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t WHERE b.type_id = t.id AND b.type_id = ? AND b.title LIKE ?
+2020-12-05 22:45:51.585 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend_COUNT - ==> Parameters: 59(Long), %%(String)
+2020-12-05 22:45:51.586 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend_COUNT - <==      Total: 1
+2020-12-05 22:45:51.586 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.type_id = ? and b.title like ? LIMIT ?
+2020-12-05 22:45:51.586 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: 59(Long), %%(String), 10(Integer)
+2020-12-05 22:45:51.589 [http-nio-8080-exec-4] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 3
+2020-12-05 22:45:51.590 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:45:51.590 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:56.475 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=60, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=60, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:45:56.475 [http-nio-8080-exec-6] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.type_id = ? and b.title like ?
+2020-12-05 22:45:56.476 [http-nio-8080-exec-6] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: 60(Long), %%(String)
+2020-12-05 22:45:56.478 [http-nio-8080-exec-6] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 1
+2020-12-05 22:45:56.478 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:45:56.479 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:45:59.194 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=60, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=60, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:45:59.195 [http-nio-8080-exec-9] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.type_id = ? and b.title like ?
+2020-12-05 22:45:59.196 [http-nio-8080-exec-9] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: 60(Long), %%(String)
+2020-12-05 22:45:59.198 [http-nio-8080-exec-9] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 1
+2020-12-05 22:45:59.199 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:45:59.199 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:03.527 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=null, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=null, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:46:03.528 [http-nio-8080-exec-10] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.title like ?
+2020-12-05 22:46:03.528 [http-nio-8080-exec-10] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: %%(String)
+2020-12-05 22:46:03.530 [http-nio-8080-exec-10] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 4
+2020-12-05 22:46:03.530 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:46:03.530 [http-nio-8080-exec-10] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:11.852 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=59, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=59, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:46:11.853 [http-nio-8080-exec-1] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.type_id = ? and b.title like ?
+2020-12-05 22:46:11.853 [http-nio-8080-exec-1] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: 59(Long), %%(String)
+2020-12-05 22:46:11.857 [http-nio-8080-exec-1] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 3
+2020-12-05 22:46:11.857 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:46:11.857 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:16.765 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs/search', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.search', args=[Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=null, userId=null, type=null, tags=[], user=null, comments=[]}, {blog=Blog{id=null, title='', content='null', firstPicture='null', description='null', flag='null', views=null, appreciation=false, shareStatement=false, commentable=false, published=false, recommend=false, createTime=null, updateTime=null, tagIds='null', typeId=null, userId=null, type=null, tags=[], user=null, comments=[]}, org.springframework.validation.BindingResult.blog=org.springframework.validation.BeanPropertyBindingResult: 0 errors}, 1]}
+2020-12-05 22:46:16.766 [http-nio-8080-exec-8] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==>  Preparing: select * from t_blog b , t_type t WHERE b.type_id = t.id and b.title like ?
+2020-12-05 22:46:16.766 [http-nio-8080-exec-8] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - ==> Parameters: %%(String)
+2020-12-05 22:46:16.769 [http-nio-8080-exec-8] DEBUG c.z.b.d.B.listSelectBlogByTitleOrTypeOrRecommend - <==      Total: 4
+2020-12-05 22:46:16.769 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs :: blogList
+2020-12-05 22:46:16.769 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:20.560 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 2]}
+2020-12-05 22:46:20.563 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:46:20.563 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:46:20.565 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:46:20.566 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?, ?
+2020-12-05 22:46:20.566 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer), 3(Integer)
+2020-12-05 22:46:20.567 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 1
+2020-12-05 22:46:20.568 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:46:20.568 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:46:20.569 [http-nio-8080-exec-7] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:46:20.570 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:46:20.570 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:31.854 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.BlogController.showBlogs', args=[{}, 1]}
+2020-12-05 22:46:31.856 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==>  Preparing: SELECT count(0) FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id
+2020-12-05 22:46:31.856 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - ==> Parameters: 
+2020-12-05 22:46:31.858 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog_COUNT - <==      Total: 1
+2020-12-05 22:46:31.861 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.type_name FROM t_blog b LEFT OUTER JOIN t_type t ON b.type_id = t.id order by update_time desc LIMIT ?
+2020-12-05 22:46:31.861 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - ==> Parameters: 3(Integer)
+2020-12-05 22:46:31.864 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.BlogDaoMapper.selectAllBlog - <==      Total: 3
+2020-12-05 22:46:31.865 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: select * from t_type
+2020-12-05 22:46:31.866 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 
+2020-12-05 22:46:31.867 [http-nio-8080-exec-1] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 6
+2020-12-05 22:46:31.868 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myBlogs
+2020-12-05 22:46:31.868 [http-nio-8080-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:38.527 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/type', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TypeController.type', args=[{}, 1]}
+2020-12-05 22:46:38.535 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==>  Preparing: SELECT count(0) FROM t_type
+2020-12-05 22:46:38.535 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==> Parameters: 
+2020-12-05 22:46:38.537 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - <==      Total: 1
+2020-12-05 22:46:38.537 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: SELECT * FROM t_type order by id desc LIMIT ?
+2020-12-05 22:46:38.538 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 5(Integer)
+2020-12-05 22:46:38.539 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 5
+2020-12-05 22:46:38.541 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTypes
+2020-12-05 22:46:38.541 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:44.289 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TagController.type', args=[{}, 1]}
+2020-12-05 22:46:44.295 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==>  Preparing: SELECT count(0) FROM t_tags
+2020-12-05 22:46:44.295 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==> Parameters: 
+2020-12-05 22:46:44.298 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - <==      Total: 1
+2020-12-05 22:46:44.299 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: SELECT * FROM t_tags order by id desc LIMIT ?
+2020-12-05 22:46:44.300 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 5(Integer)
+2020-12-05 22:46:44.302 [http-nio-8080-exec-5] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 22:46:44.303 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTags
+2020-12-05 22:46:44.304 [http-nio-8080-exec-5] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:45.454 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/friends', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.MyFriendsController.myFriends', args=[{}, 1]}
+2020-12-05 22:46:45.461 [http-nio-8080-exec-7] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - ==>  Preparing: SELECT count(0) FROM t_friend
+2020-12-05 22:46:45.462 [http-nio-8080-exec-7] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - ==> Parameters: 
+2020-12-05 22:46:45.469 [http-nio-8080-exec-7] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - <==      Total: 1
+2020-12-05 22:46:45.472 [http-nio-8080-exec-7] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - ==>  Preparing: SELECT * FROM t_friend order by id desc LIMIT ?
+2020-12-05 22:46:45.473 [http-nio-8080-exec-7] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - ==> Parameters: 5(Integer)
+2020-12-05 22:46:45.475 [http-nio-8080-exec-7] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - <==      Total: 1
+2020-12-05 22:46:45.476 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myFriends
+2020-12-05 22:46:45.477 [http-nio-8080-exec-7] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:46:48.880 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/friends/58/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.MyFriendsController.editInput', args=[58, {}]}
+2020-12-05 22:46:48.881 [http-nio-8080-exec-2] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectFriendsLinkById - ==>  Preparing: select * from t_friend where id = ?
+2020-12-05 22:46:48.882 [http-nio-8080-exec-2] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectFriendsLinkById - ==> Parameters: 58(Long)
+2020-12-05 22:46:48.884 [http-nio-8080-exec-2] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectFriendsLinkById - <==      Total: 1
+2020-12-05 22:46:48.885 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myFriends-inputs
+2020-12-05 22:46:48.887 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:58:06.484 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 18828 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:58:06.487 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:58:06.487 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:58:06.527 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 22:58:06.527 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 22:58:07.767 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:58:07.774 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:58:07.774 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:58:07.836 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:58:07.837 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1309 ms
+2020-12-05 22:58:08.472 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:58:08.555 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:58:08.891 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:58:08.938 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:58:08.947 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 3.242 seconds (JVM running for 4.024)
+2020-12-05 22:58:13.823 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 22:58:13.825 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 22:58:13.841 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2020-12-05 22:58:13.903 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 22:58:13.908 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 22:58:13.908 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:58:15.000 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@6f62f643, {}]}
+2020-12-05 22:58:15.045 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 22:58:15.348 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:58:15.373 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:58:15.390 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:58:15.394 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/admin_index
+2020-12-05 22:58:15.395 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:58:17.264 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/type', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TypeController.type', args=[{}, 1]}
+2020-12-05 22:58:17.368 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==>  Preparing: SELECT count(0) FROM t_type
+2020-12-05 22:58:17.369 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - ==> Parameters: 
+2020-12-05 22:58:17.372 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes_COUNT - <==      Total: 1
+2020-12-05 22:58:17.375 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==>  Preparing: SELECT * FROM t_type order by id desc LIMIT ?
+2020-12-05 22:58:17.375 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - ==> Parameters: 5(Integer)
+2020-12-05 22:58:17.377 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TypeDaoMapper.selectAllTypes - <==      Total: 5
+2020-12-05 22:58:17.381 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTypes
+2020-12-05 22:58:17.381 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:58:19.709 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/type/75/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TypeController.editInput', args=[75, {}]}
+2020-12-05 22:58:19.711 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==>  Preparing: select id,type_name from t_type where id = ?
+2020-12-05 22:58:19.712 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - ==> Parameters: 75(Long)
+2020-12-05 22:58:19.713 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TypeDaoMapper.selectTypes - <==      Total: 1
+2020-12-05 22:58:19.714 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTypes-inputs
+2020-12-05 22:58:19.714 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:58:24.780 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TagController.type', args=[{}, 1]}
+2020-12-05 22:58:24.792 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==>  Preparing: SELECT count(0) FROM t_tags
+2020-12-05 22:58:24.792 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==> Parameters: 
+2020-12-05 22:58:24.796 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - <==      Total: 1
+2020-12-05 22:58:24.797 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: SELECT * FROM t_tags order by id desc LIMIT ?
+2020-12-05 22:58:24.798 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 5(Integer)
+2020-12-05 22:58:24.800 [http-nio-8080-exec-8] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 22:58:24.802 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTags
+2020-12-05 22:58:24.802 [http-nio-8080-exec-8] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:58:25.984 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/tags/60/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TagController.editInput', args=[60, {}]}
+2020-12-05 22:58:25.986 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - ==>  Preparing: select id,tag_name from t_tags where id = ?
+2020-12-05 22:58:25.987 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - ==> Parameters: 60(Long)
+2020-12-05 22:58:25.989 [http-nio-8080-exec-4] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - <==      Total: 1
+2020-12-05 22:58:25.991 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTags-inputs
+2020-12-05 22:58:25.991 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:58:49.833 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/tags/60/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TagController.editInput', args=[60, {}]}
+2020-12-05 22:58:49.834 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - ==>  Preparing: select id,tag_name from t_tags where id = ?
+2020-12-05 22:58:49.835 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - ==> Parameters: 60(Long)
+2020-12-05 22:58:49.836 [http-nio-8080-exec-6] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - <==      Total: 1
+2020-12-05 22:58:49.837 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTags-inputs
+2020-12-05 22:58:49.837 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:59:24.890 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 10416 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-12-05 22:59:24.893 [restartedMain] DEBUG com.zj.blog.BlogApplication - Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-12-05 22:59:24.894 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: dev
+2020-12-05 22:59:24.967 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-05 22:59:24.967 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-05 22:59:26.185 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-05 22:59:26.193 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-05 22:59:26.194 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-05 22:59:26.253 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-05 22:59:26.254 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1287 ms
+2020-12-05 22:59:26.851 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-05 22:59:26.936 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-12-05 22:59:27.244 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-05 22:59:27.293 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-05 22:59:27.303 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 2.857 seconds (JVM running for 3.425)
+2020-12-05 22:59:34.170 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-05 22:59:34.172 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-05 22:59:34.192 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 19 ms
+2020-12-05 22:59:34.342 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.loginPage', args=[]}
+2020-12-05 22:59:34.347 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/login
+2020-12-05 22:59:34.348 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:59:35.762 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.LoginController.login', args=[zjBlog, 123456, org.apache.catalina.session.StandardSessionFacade@793a0540, {}]}
+2020-12-05 22:59:35.821 [http-nio-8080-exec-6] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-12-05 22:59:36.115 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==>  Preparing: select * from t_user where user_name = ? and password = ?
+2020-12-05 22:59:36.133 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - ==> Parameters: zjBlog(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-12-05 22:59:36.151 [http-nio-8080-exec-6] DEBUG c.z.b.dao.UserDaoMapper.findByUsernameAndPassword - <==      Total: 1
+2020-12-05 22:59:36.154 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/admin_index
+2020-12-05 22:59:36.154 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:59:37.723 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TagController.type', args=[{}, 1]}
+2020-12-05 22:59:37.822 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==>  Preparing: SELECT count(0) FROM t_tags
+2020-12-05 22:59:37.822 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - ==> Parameters: 
+2020-12-05 22:59:37.825 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags_COUNT - <==      Total: 1
+2020-12-05 22:59:37.828 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==>  Preparing: SELECT * FROM t_tags order by id desc LIMIT ?
+2020-12-05 22:59:37.828 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - ==> Parameters: 5(Integer)
+2020-12-05 22:59:37.830 [http-nio-8080-exec-2] DEBUG com.zj.blog.dao.TagDaoMapper.selectAllTags - <==      Total: 2
+2020-12-05 22:59:37.833 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTags
+2020-12-05 22:59:37.833 [http-nio-8080-exec-2] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:59:39.718 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/tags/58/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.TagController.editInput', args=[58, {}]}
+2020-12-05 22:59:39.720 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - ==>  Preparing: select id,tag_name from t_tags where id = ?
+2020-12-05 22:59:39.720 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - ==> Parameters: 58(Long)
+2020-12-05 22:59:39.721 [http-nio-8080-exec-9] DEBUG com.zj.blog.dao.TagDaoMapper.selectTag - <==      Total: 1
+2020-12-05 22:59:39.723 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myTags-inputs
+2020-12-05 22:59:39.723 [http-nio-8080-exec-9] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:59:41.096 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/friends', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.MyFriendsController.myFriends', args=[{}, 1]}
+2020-12-05 22:59:41.105 [http-nio-8080-exec-6] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - ==>  Preparing: SELECT count(0) FROM t_friend
+2020-12-05 22:59:41.105 [http-nio-8080-exec-6] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - ==> Parameters: 
+2020-12-05 22:59:41.111 [http-nio-8080-exec-6] DEBUG c.z.b.d.M.selectAllFriendsLink_COUNT - <==      Total: 1
+2020-12-05 22:59:41.112 [http-nio-8080-exec-6] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - ==>  Preparing: SELECT * FROM t_friend order by id desc LIMIT ?
+2020-12-05 22:59:41.113 [http-nio-8080-exec-6] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - ==> Parameters: 5(Integer)
+2020-12-05 22:59:41.115 [http-nio-8080-exec-6] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectAllFriendsLink - <==      Total: 1
+2020-12-05 22:59:41.116 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myFriends
+2020-12-05 22:59:41.116 [http-nio-8080-exec-6] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-12-05 22:59:42.534 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8080/admin/friends/58/input', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.admin.MyFriendsController.editInput', args=[58, {}]}
+2020-12-05 22:59:42.535 [http-nio-8080-exec-4] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectFriendsLinkById - ==>  Preparing: select * from t_friend where id = ?
+2020-12-05 22:59:42.537 [http-nio-8080-exec-4] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectFriendsLinkById - ==> Parameters: 58(Long)
+2020-12-05 22:59:42.538 [http-nio-8080-exec-4] DEBUG c.z.b.dao.MyFriendsDaoMapper.selectFriendsLinkById - <==      Total: 1
+2020-12-05 22:59:42.539 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - Result:admin/myFriends-inputs
+2020-12-05 22:59:42.539 [http-nio-8080-exec-4] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------

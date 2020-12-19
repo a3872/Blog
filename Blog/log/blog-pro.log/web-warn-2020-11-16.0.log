@@ -1,0 +1,10 @@
+2020-11-16 19:09:30.281 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 9988 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-11-16 19:09:30.298 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: pro
+2020-11-16 19:09:31.951 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.zj.blog]' package. Please check your configuration.
+2020-11-16 19:09:34.755 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 5.326 seconds (JVM running for 6.309)
+2020-11-16 19:10:29.198 [http-nio-8081-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8081/index.html', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.PageController.showPage', args=[index.html]}
+2020-11-16 19:10:29.215 [http-nio-8081-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:index.html
+2020-11-16 19:10:29.216 [http-nio-8081-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------
+2020-11-16 19:10:32.973 [http-nio-8081-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Request : {url='http://localhost:8081/index.html', ip='0:0:0:0:0:0:0:1', classMethod='com.zj.blog.controller.PageController.showPage', args=[index.html]}
+2020-11-16 19:10:32.973 [http-nio-8081-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - Result:index.html
+2020-11-16 19:10:32.973 [http-nio-8081-exec-1] INFO  com.zj.blog.logProcessing.LogAspect - ---------doAfter-----------

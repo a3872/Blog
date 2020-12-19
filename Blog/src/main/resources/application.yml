@@ -1,0 +1,29 @@
+# 公共配置
+prop:
+  upload-folder: E:\ProjectData\idea\Blog\src\main\resources\static\movies
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC
+    username: root
+    password: abc123
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: dev
+  messages:
+    basename: i18n
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${prop.upload-folder}
+mybatis:
+  type-aliases-package: com.zj.blog.pojo
+  mapper-location s: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true #设置返回字段不为空，前端不报错
+comment.avatar: /img/avatar.png

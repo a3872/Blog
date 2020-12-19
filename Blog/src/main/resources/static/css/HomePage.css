@@ -1,0 +1,41 @@
+html{
+    height: 100%;
+}
+body{
+    background-image: url("../img/HomePage.jpg");
+    background-size: 100% 100%;
+}
+.logo{
+    width: 6.8cm;
+    height: 7cm;
+    display: block;
+    margin:auto auto;
+    margin-top: 50px;
+}
+.program{
+    font-size: 50px;
+    font-family: "宋体";
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+.line{
+    width:60%;
+    border-top: 1px;
+    margin-top: 5px;
+}
+.hope{
+    font-size: 40px;
+    font-family: "华文行楷";
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+.go{
+    font-size: 20px;
+    font-family: "Times New Roman";
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+}

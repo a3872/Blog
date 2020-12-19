@@ -1,0 +1,19 @@
+html{
+    height: 100%;
+}
+body{
+    background-image: url("../img/indexPage.jpg" ) ;
+    background-size: 100% 100% ;
+    background-attachment:fixed;
+}
+.container-small {
+    max-width: 60em !important;
+    margin: auto !important;
+}
+.m-padded-tb-massive {
+    padding-top: 3em !important;
+    padding-bottom: 1em !important;
+}
+.opacity{
+    opacity: 0.8;
+}

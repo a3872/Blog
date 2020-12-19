@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/movies.css" th:href="@{/css/movies.css}">
+    <link rel="icon" href="../static/img/logo.png" th:href="@{/img/logo.png}"  type="image/x-ico">
+    <title>电影推荐</title>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="gird-header" th:replace="_fragments :: show_nav(6)">
+        <div class="ui container">
+            <div class="ui menu secondary stackable inverted">
+                <img class="logoSize" src="../static/img/logow.png" th:src="@{/img/logow.png}">
+                <a href="#" class="m-item item m-mobile-hidden"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="idea icon"></i>博客分类</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="tags icon"></i>博客标签</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="clock icon"></i>时间轴</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="music icon"></i>音乐盒</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="film icon"></i>影视推荐</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="pencil alternate icon"></i>友人帐</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="info icon"></i>管理员</a>
+                <div class="right m-item item m-mobile-hidden">
+                    <div class="ui icon input inverted transparent">
+                        <input type="text" placeholder="Serach...">
+                        <i class="search link icon"></i>
+                    </div>
+                    <div class="ui input inverted transparent" style="padding-left: 20px;width: 50px;">
+                        <div class="ui selection dropdown label small m-select" style="color: whitesmoke;">
+                            <input type="hidden" value="全部">
+                            <i class="dropdown icon"></i>
+                            <div class="text">二次元</div>
+                            <div class="ui menu">
+                                <div class="m-item item m-mobile-hidden" data-value="全部">全部</div>
+                                <div class="m-item item m-mobile-hidden" data-value="生活">生活</div>
+                                <div class="m-item item m-mobile-hidden" data-value="美文">美文</div>
+                                <div class="m-item item m-mobile-hidden" data-value="二次元">二次元</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-top-right m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <!-- 页面中间件 -->
+    <div class="m-padded-tb-large">
+        <div class="ui container">
+            <!-- 顶部 -->
+            <div class="ui container opacity segment attached teal middle aligned two column grid">
+                    <div class="column">
+                        <h3 class="ui teal header typeface">电影推荐</h3>
+                    </div>
+                    <div class="right aligned column typeface">
+                        共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${pageInfo.total}"> 14 </h2> 篇
+                    </div>
+                </div>
+            <!-- 文章 -->
+            <div class="ui container segment attached opacity">
+                <div class="ui container segment teal attached opacity stackable" th:each="movie : ${pageInfo.list}">
+                    <div class="ui middle aligned mobile stackable grid">
+                        <div class="five wide column">
+                            <div>
+                                <img class="ui image rounded" src="../static/img/DYHT.jpg" th:src="@{${movie.firstPicture}}">
+                            </div>
+                        </div>
+                        <div class="eleven wide column">
+                            <a href="#" th:href="@{/movies/{id}(id=${movie.id})}">
+                                <h3 class="ui header typecenter" th:text="${movie.title}" style="color: black">[大鱼海棠]：椿还鲲命，谁还湫情？</h3>
+                            </a>
+                            <div class="ui mini horizontal link list center aligned container">
+                                <div class="item">
+                                    <i class="calendar icon"></i><span th:text="${#dates.format(movie.updateTime,'yyyy-MM-dd')}">2020-09-25</span>
+                                </div>
+                                <div class="item">
+                                    <i class="eye icon"></i><span th:text="${movie.views}">2222</span>
+                                </div>
+                                <div class="item">
+                                    <i class="comment outline icon"></i><span th:text="${movie.commentCount}">2222</span>
+                                </div>
+                            </div>
+                            <p class="m-text" th:text="|${movie.description}......|">
+                                《大鱼海棠》这部电影以“北冥有鱼，其名为鲲。鲲之大，不知其几千里也。”和“上古有大椿者，以八千岁为春，八千岁为秋。”这两句话为背景，讲述了一段带有我国古代神话色彩的传奇故事
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 底部 -->
+            <!-- 翻页按钮 -->
+            <div class="ui bottom container attached teal segment opacity stackable grid">
+                <div class="three wide column" align="center">
+                    <a class="item" th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" th:unless="${pageInfo.isFirstPage}">上一页</a>
+                </div>
+
+                <div class="ten wide column" align="center">
+                    <p> <span th:text="${pageInfo.pageNum}"></span> / <span th:text="${pageInfo.pages}"></span> </p>
+                </div>
+
+                <div class="three wide column" align="center">
+                    <a class="item" th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" th:unless="${pageInfo.isLastPage}">下一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部信息栏 -->
+    <footer class="ui segment vertical inverted footer" th:replace="_fragments :: footer">
+        <div class="ui  center aligned container">
+            <div class="ui grid inverted divided stackable">
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">联系我</h4>
+                    <div class="ui inverted link list middle aligned">
+                        <a href="#" class="item">QQ: 2243501488</a>
+                        <a href="#" class="item">Mail: zj@gmail.com</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">公众号</h4>
+                    <img class="ui rounded image footerImage" src="../static/img/footerWeChat.png" th:src="@{/img/footerWeChat.png}">
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">QQ群</h4>
+                    <img class="ui rounded image footerImage" src="../static/img/footerQQ.png" th:src="@{/img/footerQQ.png}">
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">客栈信息</h4>
+                    <div class="ui inverted link list middle aligned">
+                        <a href="#" class="item">文章总数：31篇</a>
+                        <a href="#" class="item">访问总数：32640次</a>
+                        <a href="#" class="item">评论总数：578条</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted divider"></div>
+            <p class="typeface">我的客栈已营业：0年200天1时16分42秒 (*๓´╰╯`๓)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script th:inline="javascript">
+        /** 导航栏隐藏按钮动画 */
+        $('.menu.toggle').click(function tog() {
+            $('.m-item').toggleClass('m-mobile-hidden')
+        });
+        /** 导航栏下拉菜单动画 */
+        $('.ui.dropdown').dropdown({
+            on : 'hover'
+        });
+    </script>
+</body>
+</html>

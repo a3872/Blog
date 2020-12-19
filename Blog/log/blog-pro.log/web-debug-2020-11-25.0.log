@@ -1,0 +1,3 @@
+2020-11-25 21:08:49.315 [restartedMain] INFO  com.zj.blog.BlogApplication - Starting BlogApplication on DESKTOP-G83SJCH with PID 7084 (E:\ProjectData\idea\Blog\target\classes started by 夜生名 in E:\ProjectData\idea\Blog)
+2020-11-25 21:08:49.354 [restartedMain] INFO  com.zj.blog.BlogApplication - The following profiles are active: pro
+2020-11-25 21:08:54.481 [restartedMain] INFO  com.zj.blog.BlogApplication - Started BlogApplication in 6.289 seconds (JVM running for 11.503)

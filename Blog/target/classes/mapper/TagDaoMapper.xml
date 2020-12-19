@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zj.blog.dao.TagDaoMapper">
+
+    <resultMap id="tags" type="com.zj.blog.pojo.BlogTags">
+        <id property="id" column="id"/>
+        <result property="tagName" column="tag_name"/>
+    </resultMap>
+
+    <!--新增保存分类-->
+    <insert id="insertTag" parameterType="com.zj.blog.pojo.BlogTags">
+        insert into t_tags(id, tag_name) values (#{id},#{tagName});
+    </insert>
+
+    <!--根据id查询分类-->
+    <select id="selectTag" resultMap="tags">
+        select id, tag_name from t_tags where id = #{id}
+    </select>
+
+    <select id="selectTagByName" resultMap="tags">
+        select id,tag_name from t_tags where tag_name = #{tagName}
+    </select>
+
+
+
+    <!--查询所有分类-->
+    <select id="selectAllTags" resultMap="tags">
+        select t.id, t.tag_name
+        from t_tags t
+    </select>
+
+    <select id="selectAll" resultMap="tags">
+        select * from t_tags
+    </select>
+
+    <select id="selectTagsByIds" resultType="com.zj.blog.pojo.BlogTags">
+        select t.id, t.tag_name from t_tags t where t.id = #{id}
+    </select>
+
+    <!--编辑修改分类-->
+    <update id="updateTags" parameterType="com.zj.blog.pojo.BlogTags">
+        update t_tags set tag_name = #{tagName} where id = #{id};
+    </update>
+
+    <!--删除分类-->
+    <delete id="deleteTags" >
+        delete from t_tags where id = #{id}
+    </delete>
+
+    <resultMap id="tag" type="com.zj.blog.pojo.BlogTags">
+        <id property="id" column="tid"/>
+        <result property="tagName" column="tag_name"/>
+        <collection property="blogs" ofType="com.zj.blog.pojo.Blog">
+            <id property="id" column="bid"/>
+            <result property="title" column="title"/>
+            <result property="tagIds" column="tag_ids"/>
+        </collection>
+    </resultMap>
+    <!--分类页面查询-->
+    <select id="selectAllTagsAndBlog" resultMap="tag">
+        select t.id tid, t.tag_name,
+               b.id bid, b.title
+        from t_tags t, t_blog b, blog.t_blog_tags bt
+        where t.id = bt.tag_id and b.id = bt.blog_id
+    </select>
+</mapper>

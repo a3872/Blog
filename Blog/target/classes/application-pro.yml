@@ -1,0 +1,9 @@
+# 生产环境配置
+logging:
+  level:
+    root: warn
+    com.zj: info
+  file:
+    path: log/blog-pro.log
+server:
+  port: 8081

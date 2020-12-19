@@ -1,0 +1,143 @@
+html{
+    height: 100%;
+}
+body{
+    background-image: url("../img/blog.jpg" ) ;
+    background-size: 100% 100% ;
+    background-attachment:fixed;
+}
+/******************************通用样式******************************/
+.opacity {
+    opacity: 0.9 !important;
+}
+.typecolor{
+    color: black;
+}
+.typeface{
+    font-family: "宋体" !important;
+}
+.typecenter{
+    text-align: center !important;
+}
+.typemargin{
+    margin-top: 1em !important;
+    margin-bottom: 0.3em !important;
+}
+/******************************顶部信息栏******************************/
+.logoSize{
+    width:46px;
+    height: 50px;
+    margin-right: 5%;
+}
+.gird-header {
+    width: 100% !important;
+    min-height: 60px !important;
+    padding-top: 0.3em !important;
+    /** 实现导航栏透明，文字不透明 */
+    /** rgba(0, 0, 0, 0.2) 前三个确定颜色，最后0.2确定透明度 */
+    background: rgba(0, 0, 0, 0.5) none repeat scroll !important;
+    /** 实现FireFox背景透明，文字不透明 */
+    background: #ffffff;
+    filter: Alpha(opacity=20);
+    /** 实现将导航栏固定在屏幕顶端 */
+    position: fixed;
+    z-index: 11002;
+    top: 0;
+    left: 0;
+    border-bottom: 0.1px solid  #e8e9e7;
+    font-size: 15px;
+}
+.m-select{
+    /** rgba(0, 0, 0, 0.2) 前三个确定颜色，最后0.2确定透明度 */
+    background: rgba(0, 0, 0, 0) none repeat scroll !important;
+}
+/** 指定手机端导航栏按钮绝对位置 */
+.m-top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/** 手机端导航栏隐藏效果 */
+.m-mobile-show{
+    display: none !important;
+}
+/** 设置导航栏在手机端隐藏 */
+@media screen and (max-width: 760px){
+    .m-mobile-hidden{
+        display: none !important;
+    }
+    .m-mobile-show{
+        display: block !important;
+    }
+}
+/******************************页面中间件******************************/
+/** 顶部图片样式 **/
+.m-bg-type_outer {
+    display: block;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.m-bg{
+    width: 100% !important;
+    height: 650px !important;
+    object-fit: cover !important;
+}
+.m-bg-class_cover {
+    width: 100%;
+    height: 750px;
+    line-height: 50px;
+    padding-left: 6px;
+    background-color: rgba(0, 0, 0, 0.60);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.m-font-size-title{
+    font-size: 400%;
+    font-family: STXingkai;
+    color: white;
+}
+.m-font-size-text-init-title{
+    font-size: 24px;
+    color: #fffffc;
+    align-content: center;
+    font-family:'STXingkai';
+}
+.m-margin-top {
+    margin-top: 1em !important;
+}
+/** 个人信息样式 **/
+.box-shadow-max{
+    margin-bottom: 15px;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .05);
+    -webkit-box-shadow: #000000 0px 0px 10px;
+    -moz-box-shadow: #000000 0px 0px 10px;
+}
+.m-margin-{
+    margin-top:-4em !important;
+}
+.m-margin-top-large {
+    margin-top: 2em !important;
+}
+.m-margin-top-small {
+    margin-top: 1em !important;
+}
+.m-margin-tb-tiny{
+    margin-top: 0.2em !important;
+    margin-bottom: 0.2em !important;
+    margin-left: 0.2em !important;
+}
+/******************************底部信息栏******************************/
+.footer{
+    /** 实现底部信息栏栏透明，文字不透明 */
+    /** rgba(0, 0, 0, 0.2) 前三个确定颜色，最后0.2确定透明度 */
+    background: rgba(0, 0, 0, 0.7) none repeat scroll !important;
+}
+/** 底部信息栏的图片样式 */
+.footerImage{
+    width: 100px;
+    margin:auto;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zj.blog.dao.MoviesDaoMapper">
+
+    <select id="selectMovieById" resultType="com.zj.blog.pojo.BlogMovies">
+        select
+        m.id, m.title, m.first_picture, m.description, m.flag, m.views, m.comment_count,
+        m.appreciation, m.share_statement, m.commentable, m.published,
+        m.create_time, m.update_time, m.user_id, m.video_path,
+        u.nick_name
+        from t_movies m, t_user u where m.id = #{id}
+    </select>
+
+    <select id="getById" resultType="com.zj.blog.pojo.BlogMovies">
+        select * from t_movies where id = #{id}
+    </select>
+
+    <select id="selectAllMovies" resultType="com.zj.blog.pojo.BlogMovies">
+        select * from t_movies
+    </select>
+
+    <select id="SearchMovies" resultType="com.zj.blog.pojo.BlogMovies">
+        <bind name="pattern" value="'%' + title + '%'" />
+        select * from t_movies where title like #{pattern}
+    </select>
+
+    <insert id="insertMovies" parameterType="com.zj.blog.pojo.BlogMovies">
+        insert into t_movies
+        (id, title, first_picture, description, flag, views, comment_count,
+        appreciation, share_statement, commentable, published,
+        create_time, update_time, user_id, video_path)
+        values (#{id}, #{title}, #{firstPicture}, #{description}, #{flag}, #{views}, #{commentCount},
+        #{appreciation}, #{shareStatement}, #{commentable}, #{published},
+        #{createTime}, #{updateTime}, #{userId}, #{videoPath});
+    </insert>
+
+    <update id="updateMovies" parameterType="com.zj.blog.pojo.BlogMovies">
+        update t_movies
+        set title = #{title}, first_picture = #{firstPicture},
+        description = #{description}, flag = #{flag},
+        appreciation = #{appreciation}, share_statement = #{shareStatement},
+        commentable = #{commentable} , published = #{published},
+        update_time = #{updateTime}
+        where id = #{id};
+    </update>
+
+    <delete id="deleteMovies">
+        delete from t_movies where id = #{id}
+    </delete>
+
+    <!-- 查询并更新博客评论数量 -->
+    <update id="selectCommentCountById" parameterType="com.zj.blog.pojo.Blog">
+        update t_movies m set m.comment_count = (
+        select count(*) from t_comment t where t.blog_id = #{id} and m.id = #{id}
+        ) where m.id = #{id}
+    </update>
+    <!-- 文章访问自增 -->
+    <update id="updateViews" parameterType="com.zj.blog.pojo.Blog">
+        update t_movies m set m.views = m.views+1 where m.id = #{id}
+    </update>
+
+</mapper>

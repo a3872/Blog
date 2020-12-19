@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/about.css" th:href="@{/css/about.css}">
+    <link rel="icon" href="../static/img/logo.png" th:href="@{/img/logo.png}"  type="image/x-ico">
+    <title>关于我</title>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="gird-header" th:replace="_fragments :: show_nav(8)">
+        <div class="ui container">
+            <div class="ui menu secondary stackable inverted">
+                <img class="logoSize" src="../static/img/logow.png" th:src="@{/img/logow.png}">
+                <a href="#" class="m-item item m-mobile-hidden"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="idea icon"></i>博客分类</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="tags icon"></i>博客标签</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="clock icon"></i>时间轴</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="music icon"></i>音乐盒</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="film icon"></i>影视推荐</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="pencil alternate icon"></i>友人帐</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="info icon"></i>管理员</a>
+                <div class="right m-item item m-mobile-hidden">
+                    <div class="ui icon input inverted transparent">
+                        <input type="text" placeholder="Serach...">
+                        <i class="search link icon"></i>
+                    </div>
+                    <div class="ui input inverted transparent" style="padding-left: 20px;width: 50px;">
+                        <div class="ui selection dropdown label small m-select" style="color: whitesmoke;">
+                            <input type="hidden" value="全部">
+                            <i class="dropdown icon"></i>
+                            <div class="text">二次元</div>
+                            <div class="ui menu">
+                                <div class="m-item item m-mobile-hidden" data-value="全部">全部</div>
+                                <div class="m-item item m-mobile-hidden" data-value="生活">生活</div>
+                                <div class="m-item item m-mobile-hidden" data-value="美文">美文</div>
+                                <div class="m-item item m-mobile-hidden" data-value="二次元">二次元</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-top-right m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <!-- 页面中间件 -->
+    <!-- 顶部背景图片 -->
+    <div class="m-bg-type_outer" style="width: 100%;height: 40%">
+        <img src="../static/img/aboutbg.jpg" th:src="@{/img/aboutbg.jpg}" alt="" class="ui m-bg image" style="width: 100%;height: 100%">
+        <div class="m-bg-class_cover">
+            <div class="ui container" style="position: relative ;bottom: -550px;">
+                <div class="m-font-size-title" align="center">关于我</div>
+                <div class="m-font-size-text-init-title m-margin-top" align="center">头一次活这么久，记得善待自己</div>
+            </div>
+        </div>
+    </div>
+    <!-- 个人资料描述 -->
+    <div class="ui container opacity box-shadow-max">
+        <div class="ui segment m-margin-" align="center">
+            <div class="m-margin-top-large" align="center">
+                <img class="ui circular image" align="center" src="../static/img/HeadPhoto.jpg" th:src="@{/img/HeadPhoto.jpg}" style="width: 150px;height: 150px;">
+            </div>
+            <div class="m-margin-top-small typeface" style="font-size: x-large" align="center">夜生明</div>
+            <div class="m-margin-top" align="center">
+                <a href="#" class="ui tencent circular icon button"><i class="user icon"></i></a>
+                <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+                <a href="#" class="ui qq circular icon button" data-content="2243501488" data-position="bottom center"><i class="qq icon"></i></a>
+                <a href="https://github.com/oneStarLR/" target="_blank" class="ui github circular icon button" data-content="点击跳转GitHub" data-position="bottom center"><i class="github icon"></i></a>
+                <a href="https://i.csdn.net/#/uc/profile" target="_blank" class="ui csdn circular icon button" data-content="点击跳转CSDN" data-position="bottom center"><i class="copyright outline icon"></i></a>
+                <a href="#" class="ui email circular icon button" data-content="2243501488@qq.com" data-position="bottom center"><i class="envelope  icon"></i></a>
+            </div>
+            <div class="ui tencent-qr flowing popup transition hidden">
+                <img src="../static/img/footerQQ.png" th:src="@{/img/footerQQ.png}" alt="" class="ui rounded image" style="width: 110px">
+                <div align="center">公众号</div>
+            </div>
+            <div class="ui wechat-qr flowing popup transition hidden">
+                <img src="../static/img/footerWeChat.png" th:src="@{/img/footerWeChat.png}" alt="" class="ui rounded image" style="width: 110px">
+                <div align="center">微信</div>
+            </div>
+            <div class="ui qq-qr flowing popup transition hidden">
+                <img src="../static/img/footerQQ.png" th:src="@{/img/footerQQ.png}" alt="" class="ui rounded image" style="width: 110px">
+                <div align="center">QQ</div>
+            </div>
+
+            <hr class="m-margin-top-small" style="width: 30%">
+            <br>
+
+            <div>
+                <p>“小二，上茶~”</p>
+                <p>“来~嘞~，客官您稍等”</p>
+                <p>“各位客官，我是夜生明，此客栈掌柜的”</p>
+                <br>
+                <p>95后</p>
+                <p>爱编程、爱动漫、爱折腾</p>
+                <p>生命在于折腾</p>
+                <p>世界很大</p>
+                <p>有些鸟儿注定是不会被关在笼子里的</p>
+                <p>因为它们的每一片羽毛都闪耀着自由的光辉</p>
+                <p>既然来到了人间</p>
+                <p>便去经历，去拼搏，去感受，去爱</p>
+                <p>生命不息，折腾不止</p>
+                <p>总有些人，有些事，会让你感觉到生命的温暖和满足，让你感慨生命的“不虚此行”</p>
+                <p>届时，我会说</p>
+                <p>我来过，我不后悔！</p>
+            </div>
+
+            <hr class="m-margin-top-large">
+
+            <h2 style="font-size: xx-large;font-weight: bold;color: #f08047;font-family: STSong">打赏本站</h2>
+            <div class="ui orange basic label m-margin-tb-tiny">
+                <p style="font-size: medium">每一次提笔的我们，就像街边的街头艺人，用笔唱着自己的歌谣。如果有一天你感动了，那么期待您请我们来一杯咖啡</p>
+            </div>
+            <div class="ui orange basic label">
+                <div class="ui images" style="font-size: inherit !important;">
+                    <div class="image">
+                        <img src="../static/img/pay_ZFB.jpg" th:src="@{/img/pay_ZFB.jpg}" alt="" class="ui rounded bordered image" style="width: 180px">
+                        <div>支付宝</div>
+                    </div>
+                    <div class="image">
+                        <img src="../static/img/pay_WeChat.png" th:src="@{/img/pay_WeChat.png}" alt="" class="ui rounded bordered image" style="width: 180px">
+                        <div>微信</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部信息栏 -->
+    <footer class="ui segment vertical inverted footer" th:replace="_fragments :: footer">
+        <div class="ui  center aligned container">
+            <div class="ui grid inverted divided stackable">
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">联系我</h4>
+                    <div class="ui inverted link list middle aligned">
+                        <a href="#" class="item">QQ: 2243501488</a>
+                        <a href="#" class="item">Mail: zj@gmail.com</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">公众号</h4>
+                    <img class="ui rounded image footerImage" src="../static/img/footerWeChat.png" th:src="@{/img/footerWeChat.png}">
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">QQ群</h4>
+                    <img class="ui rounded image footerImage" src="../static/img/footerQQ.png" th:src="@{/img/footerQQ.png}">
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">客栈信息</h4>
+                    <div class="ui inverted link list middle aligned">
+                        <a href="#" class="item">文章总数：31篇</a>
+                        <a href="#" class="item">访问总数：32640次</a>
+                        <a href="#" class="item">评论总数：578条</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted divider"></div>
+            <p class="typeface">我的客栈已营业：0年200天1时16分42秒 (*๓´╰╯`๓)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script th:inline="javascript">
+        /** 导航栏隐藏按钮动画 */
+        $('.menu.toggle').click(function tog() {
+            $('.m-item').toggleClass('m-mobile-hidden')
+        });
+        /** 导航栏下拉菜单动画 */
+        $('.ui.dropdown').dropdown({
+            on : 'hover'
+        });
+        // 显示公众号
+        $('.tencent').popup({
+            popup : $('.tencent-qr'),
+            position: 'bottom center'
+        });
+        // 显示微信
+        $('.wechat').popup({
+            popup : $('.wechat-qr'),
+            position: 'bottom center'
+        });
+        // 显示QQ
+        $('.qq').popup({
+            popup : $('.qq-qr'),
+            position: 'bottom center'
+        });
+        // 显示邮箱
+        $('.email').popup();
+        // 显示CSDN
+        $('.csdn').popup();
+        // 显示github
+        $('.github').popup();
+    </script>
+</body>
+</html>

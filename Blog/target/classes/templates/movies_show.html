@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/lib/ckinVideo/dist/css/ckin.css" th:href="@{/lib/ckinVideo/dist/css/ckin.css}">
+    <link rel="stylesheet" href="../static/lib/others/animate.css" th:href="@{/lib/others/animate.css}"><!-- 动画效果 -->
+    <link rel="stylesheet" href="../static/css/blog.css" th:href="@{/css/blog.css}">
+    <link href="../static/img/logo.png" th:href="@{/img/logo.png}" rel="icon" type="image/x-ico">
+    <title>博客详情页</title>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="gird-header" th:replace="_fragments :: show_nav(6)">
+        <div class="ui container">
+            <div class="ui menu secondary stackable inverted">
+                <img class="logoSize" src="../static/img/logow.png" th:src="@{/img/logow.png}">
+                <a href="#" class="m-item item m-mobile-hidden"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="idea icon"></i>博客分类</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="tags icon"></i>博客标签</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="clock icon"></i>时间轴</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="music icon"></i>音乐盒</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="film icon"></i>影视推荐</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="pencil alternate icon"></i>友人帐</a>
+                <a href="#" class="m-item item m-mobile-hidden"><i class="info icon"></i>管理员</a>
+                <div class="right m-item item m-mobile-hidden">
+                    <div class="ui icon input inverted transparent">
+                        <input type="text" placeholder="Serach...">
+                        <i class="search link icon"></i>
+                    </div>
+                    <div class="ui input inverted transparent" style="padding-left: 20px;width: 50px;">
+                        <div class="ui selection dropdown label small m-select" style="color: whitesmoke;">
+                            <input type="hidden" value="全部">
+                            <i class="dropdown icon"></i>
+                            <div class="text">二次元</div>
+                            <div class="ui menu">
+                                <div class="m-item item m-mobile-hidden" data-value="全部">全部</div>
+                                <div class="m-item item m-mobile-hidden" data-value="生活">生活</div>
+                                <div class="m-item item m-mobile-hidden" data-value="美文">美文</div>
+                                <div class="m-item item m-mobile-hidden" data-value="二次元">二次元</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-top-right m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <!-- 页面中间件 -->
+    <!--标题和作者信息-->
+    <div class="m-bg-type_outer" style="width: 100%;height: 40%">
+        <img src="../static/img/bg.jpg" class="ui m-bg image" th:src="@{${movies.firstPicture}}">
+        <div class="m-bg-class_cover">
+            <div class="ui container" style="position: relative ;bottom: -560px;">
+                <h1 class="typeface typecenter m-blog-title" th:text="${movies.title}">大鱼海棠[椿还鲲命，谁还湫情]</h1>
+                <div class="ui container typecenter">
+                    <div class="ui horizontal link list typecenter">
+                        <div class="item">
+                            <div class="ui orange basic label typeface" style="font-size: 7px" th:text="${movies.flag}">转载</div>
+                        </div>
+                        <div class="item">
+                            <i class="user outline icon m-author-style"></i>
+                            <a href="#" style="color: white; font-size: 16px" th:text="${movies.nickName}">夜生明</a>
+                        </div>
+                        <div class="item">
+                            <i class="calendar icon m-author-style"></i>
+                            <span class="m-author-style" th:text="${#dates.format(movies.updateTime,'yyyy-MM-dd')}">2020-01-01</span>
+                        </div>
+                        <div class="item">
+                            <i class="eye icon m-author-style"></i>
+                            <span class="m-author-style" th:text="${movies.views}">2222</span>
+                        </div>
+                        <div class="item">
+                            <i class="comment outline icon m-author-style"></i>
+                            <span class="m-author-style" th:text="${movies.commentCount}">2222</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--中间内容-->
+    <div id="waypoint" class="m-margin- animated fadeIn">
+        <div class="ui container opacity box-shadow-max">
+            <!--内容-->
+            <div class="ui attached padded segment">
+                <p class="m-text" th:text="|${movies.description}......|">
+                    《大鱼海棠》这部电影以“北冥有鱼，其名为鲲。鲲之大，不知其几千里也。”和“上古有大椿者，以八千岁为春，八千岁为秋。”这两句话为背景，讲述了一段带有我国古代神话色彩的传奇故事
+                </p>
+                <!-- 视频 -->
+                <!--
+                    data-ckin：视频播放器的皮肤。可选值有：default, minimum, compact。
+                    data-color：控制按钮的颜色。如：data-color="#fff000"。
+                    data-overlay：为视频播放器添加一个遮罩层。可选值为1和2。
+                    poster：设置视频的封面。如：poster="videoPath-background-image"。
+                -->
+                <video data-overlay="1" data-title="大鱼海棠..." data-color="teal" data-ckin="default">
+                    <source src="../static/movies/DYHT.mp4" th:src="@{${movies.videoPath}}" type="video/mp4">
+                </video>
+
+                <!-- 分割线 -->
+                <div class="ui horizontal divider">end</div>
+                <!--赞赏-->
+                <div th:if="${movies.appreciation}">
+                    <div class="ui center aligned basic segment">
+                        <button id="payButton" class="ui orange basic circular button">赞赏</button>
+                    </div>
+                    <div class="ui payQR flowing popup transition hidden">
+                        <div class="ui orange basic label">
+                            <div class="ui images" style="font-size: inherit !important;">
+                                <!-- 支付宝 -->
+                                <div class="image">
+                                    <img src="../static/img/pay_ZFB.jpg" th:src="@{/img/pay_ZFB.jpg}" alt="" class="ui rounded bordered image" style="width: 120px">
+                                    <div>支付宝</div>
+                                </div>
+                                <!-- 微信 -->
+                                <div class="image">
+                                    <img src="../static/img/pay_WeChat.png" th:src="@{/img/pay_WeChat.png}" alt="" class="ui rounded bordered image" style="width: 120px">
+                                    <div>微信</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 博客信息 -->
+            <div id="goto" class="ui attached positive message" th:if="${movies.shareStatement}">
+                <div class="ui middle aligned">
+                    <ui class="list">
+                        <li>作者：<span th:text="${movies.nickName}">夜生明</span><a href="#" target="_blank">（掌柜的）</a></li>
+                        <li>发表时间：<span th:text="${#dates.format(movies.updateTime,'yyyy-MM-dd HH:mm')}">2020-01-02 09:08</span></li>
+                        <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
+                        <li>转载声明：如果是转载本掌柜转载的文章，请附上原文链接</li>
+                    </ui>
+                </div>
+            </div>
+            <!-- 评论区 -->
+            <div class="ui bottom attached segment" th:if="${movies.commentable}">
+                <!--评论区域列表-->
+                <div id="comment-container" class="ui teal segment">
+                    <div th:fragment="commentList">
+                        <div class="ui threaded comments" style="max-width: 100%;">
+                            <h3 class="ui dividing header">评论</h3>
+                            <div class="comment" th:each="comment : ${comments}">
+                                <!-- 评论区头像 -->
+                                <a class="avatar">
+                                    <img src="../static/img/avatar.png" th:src="@{${comment.avatar}}">
+                                </a>
+                                <!-- 评论 -->
+                                <div class="content">
+                                    <a class="author" >
+                                        <span th:text="${comment.nickName}">Matt</span>
+                                        <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${comment.adminComment}">>栈主</div>
+                                    </a>
+                                    <div class="metadata">
+                                        <span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                                    </div>
+                                    <div class="text" th:text="${comment.commentContent}">
+                                        How artistic!
+                                    </div>
+                                    <div class="actions">
+                                        <a class="reply" data-commentid="1" data-commentnickname="Matt" th:attr="data-commentid=${comment.id},data-commentnickname=${comment.nickName}" onclick="reply(this)">回复</a>
+                                        <a class="delete" href="#" th:href="@{/comment/{param1}/{param2}/delete(param1=${comment.moviesId},param2=${comment.id})}" onclick="return confirm('确定要删除该评论吗？三思啊! 删了可就没了！')" th:if="${session.user}">删除</a>
+                                    </div>
+                                </div>
+                                <!-- 子集评论 -->
+                                <div class="comments" th:if="${#arrays.length(comment.replyComment)}>0">
+                                    <div class="comment" th:each="reply : ${comment.replyComment}">
+                                        <a class="avatar">
+                                            <img src="../static/img/avatar.png" th:src="@{${reply.avatar}}">
+                                        </a>
+                                        <div class="content">
+                                            <a class="author" >
+                                                <span th:text="${reply.nickName}">小红</span>
+                                                <div class="ui mini basic teal left pointing label m-padded-mini" th:if="${reply.adminComment}">栈主</div>
+                                                &nbsp;<span class="m-teal" th:text="|@ ${reply.parentNickname}|">@ 小白</span>
+                                            </a>
+                                            <div class="metadata">
+                                                <span class="date" th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                                            </div>
+                                            <div class="text" th:text="${reply.commentContent}">
+                                                How artistic!
+                                            </div>
+                                            <div class="actions">
+                                                <a class="reply" data-commentid="1" data-commentnickname="Matt" th:attr="data-commentid=${reply.id},data-commentnickname=${reply.nickName}" onclick="reply(this)">回复</a>
+                                                <a class="delete" href="#" th:href="@{/comment/{param1}/{param2}/delete(param1=${reply.moviesId},param2=${reply.id})}" onclick="return confirm('确定要删除该评论吗？三思啊! 删了可就没了！')" th:if="${session.user}">删除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="comment-form" class="ui form">
+                    <input type="hidden" name="moviesId" th:value="${movies.id}">
+                    <input type="hidden" name="parentComment.id" value="-1">
+                    <div class="field">
+                        <textarea name="commentContent" placeholder="请输入评论信息..."></textarea>
+                    </div>
+                    <div class="fields">
+                        <div class="field m-mobile-wide m-margin-bottom-small">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="nickName" placeholder="姓名" th:value="${session.user}!=null ? ${session.user.nickName}">
+                            </div>
+                        </div>
+                        <div class="field m-mobile-wide m-margin-bottom-small">
+                            <div class="ui left icon input">
+                                <i class="mail icon"></i>
+                                <input type="text" name="email" placeholder="邮箱" th:value="${session.user}!=null ? ${session.user.email}">
+                            </div>
+                        </div>
+                        <div class="field m-mobile-wide m-margin-bottom-small">
+                            <button id="commentPost-btn" type="button" class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部信息栏 -->
+    <footer class="ui segment vertical inverted footer" th:replace="_fragments :: footer">
+        <div class="ui  center aligned container">
+            <div class="ui grid inverted divided stackable">
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">联系我</h4>
+                    <div class="ui inverted link list middle aligned">
+                        <a href="#" class="item">QQ: 2243501488</a>
+                        <a href="#" class="item">Mail: zj@gmail.com</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">公众号</h4>
+                    <img class="ui rounded image footerImage" src="../static/img/footerWeChat.png" th:src="@{/img/footerWeChat.png}">
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">QQ群</h4>
+                    <img class="ui rounded image footerImage" src="../static/img/footerQQ.png" th:src="@{/img/footerQQ.png}">
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui header typeface inverted">客栈信息</h4>
+                    <div class="ui inverted link list middle aligned">
+                        <a href="#" class="item">文章总数：31篇</a>
+                        <a href="#" class="item">访问总数：32640次</a>
+                        <a href="#" class="item">评论总数：578条</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted divider"></div>
+            <p class="typeface">我的客栈已营业：0年200天1时16分42秒 (*๓´╰╯`๓)</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script><!-- 实现平滑滚动效果 -->
+    <script src="../static/lib/ckinVideo/src/js/ckin.js" th:src="@{/lib/ckinVideo/src/js/ckin.js}"></script>
+    <script th:inline="javascript">
+        /** 导航栏隐藏按钮动画 */
+        $('.menu.toggle').click(function tog() {
+            $('.m-item').toggleClass('m-mobile-hidden')
+        });
+        /** 导航栏下拉菜单动画 */
+        $('.ui.dropdown').dropdown({
+            on : 'hover'
+        });
+        /** 打赏按钮动画 */
+        $('#payButton').popup({
+            popup : $('.payQR.popup'),
+            on : 'click',
+            position: 'bottom center'
+        });
+        //评论表单验证
+        $('.ui.form').form({
+            fields: {
+                title: {
+                    identifier: 'commentContent',
+                    rules: [{
+                        type: 'empty',
+                        prompt: '请输入评论内容'
+                    }]
+                },
+                content: {
+                    identifier: 'nickName',
+                    rules: [{
+                        type: 'empty',
+                        prompt: '请输入你的大名'
+                    }]
+                },
+                type: {
+                    identifier: 'email',
+                    rules: [{
+                        type: 'email',
+                        prompt: '请填写正确的邮箱地址'
+                    }]
+                }
+            }
+        });
+        /** 加载评论信息 */
+        $(function () {
+            $("#comment-container").load(/*[[@{/comments/{id}(id=${movies.id})}]]*/);
+        });
+
+        $('#commentPost-btn').click(function () {
+            var boo = $('.ui.form').form('validate form');
+            if (boo) {
+                console.log('校验成功');
+                postData();
+            } else {
+                console.log('校验失败');
+            }
+        });
+
+        function postData() {
+            $("#comment-container").load(/*[[@{/comments}]]*/"",{
+                "parentComment.id" : $("[name='parentComment.id']").val(),
+                "blogId" : $("[name='moviesId']").val(),
+                "nickName": $("[name='nickName']").val(),
+                "email"   : $("[name='email']").val(),
+                "commentContent" : $("[name='commentContent']").val()
+            },function (responseTxt, statusTxt, xhr) {
+                $(window).scrollTo($('#goto'),500);
+                clearContent();
+            });
+        }
+
+        function clearContent() {
+            $("[name='commentContent']").val('');
+            $("[name='parentComment.id']").val(-1);
+            $("[name='nickName']").val('');
+            $("[name='email']").val('');
+            $("[name='commentContent']").attr("placeholder", "请输入评论信息...");
+            console.log('清除数据');
+        }
+
+        function reply(obj) {
+            var commentId = $(obj).data('commentid');
+            var commentNickname = $(obj).data('commentnickname');
+            $("[name='commentContent']").attr("placeholder", "@"+commentNickname).focus();
+            $("[name='parentComment.id']").val(commentId);
+            $(window).scrollTo($('#comment-form'),500);
+        }
+    </script>
+</body>
+</html>

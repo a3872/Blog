@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zj.blog.dao.CommentDaoMapper">
+
+    <select id="selectByBlogIdParentIdNull" resultType="com.zj.blog.pojo.BlogComment">
+        select *
+        from t_comment c
+        where c.blog_id = #{blogId} and c.parent_comment_id = #{blogParentId}
+        order by c.create_time desc
+    </select>
+
+    <select id="selectByBlogIdParentIdNotNull" resultType="com.zj.blog.pojo.BlogComment">
+        select *
+        from t_comment c
+        where c.blog_id = #{blogId} and c.parent_comment_id = #{id}
+        order by c.create_time desc
+    </select>
+
+    <!--查询二级子评论-->
+    <select id="selectByBlogIdAndReplayId" resultType="com.zj.blog.pojo.BlogComment">
+        select *
+        from t_comment c
+        where c.blog_id = #{blogId} and c.parent_comment_id = #{childId}
+        order by c.create_time desc
+    </select>
+
+    <insert id="insertComment" parameterType="com.zj.blog.pojo.BlogComment">
+        insert into t_comment
+                    (nick_name, email, comment_content, avatar, create_time,
+                     blog_id, parent_comment_id, admin_comment)
+               values
+                    (#{nickName}, #{email}, #{commentContent}, #{avatar}, #{createTime},
+                     #{blogId}, #{parentCommentId}, #{adminComment});
+    </insert>
+
+    <!--删除评论-->
+    <delete id="deleteComment" >
+        delete from t_comment where id = #{id}
+    </delete>
+
+</mapper>

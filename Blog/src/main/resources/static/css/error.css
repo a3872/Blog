@@ -1,0 +1,19 @@
+.m-margin-top-max {
+    margin-top: 35px !important;
+}
+.m-mobile-wide {
+    position: absolute;
+    right: 10%;
+}
+.container-small {
+    max-width: 60em !important;
+    margin: auto !important;
+}
+.m-padded-tb-massive {
+    padding-top: 3em !important;
+    padding-bottom: 1em !important;
+}
+.m-padded-tb-big {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
